@@ -1,6 +1,7 @@
 package ldap_api
 
 import (
+	"crypto/tls"
 	"fmt"
 	"github.com/go-ldap/ldap"
 	"log"
@@ -29,6 +30,19 @@ func Connect() (*ldap.Conn, error) {
 func ConnectTLS() (*ldap.Conn, error) {
 	// You can also use IP instead of FQDN
 	l, err := ldap.DialURL(fmt.Sprintf("ldaps://%s:636", FQDN))
+	if err != nil {
+		return nil, err
+	}
+
+	return l, nil
+}
+
+func ConnectTLSConfig() (*ldap.Conn, error) {
+	// You can also use IP instead of FQDN
+	l, err := ldap.DialURL(
+		fmt.Sprintf("ldaps://%s:636", FQDN),
+		ldap.DialWithTLSConfig(&tls.Config{InsecureSkipVerify: true}),
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -105,16 +119,16 @@ func main() {
 		log.Fatal(err)
 	}
 	result.Entries[0].Print()
-	
+
 	// TLS Connection
-	l, err := ConnectTLS()
+	ltls, err := ConnectTLS()
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer l.Close()
+	defer ltls.Close()
 
 	// Normal Bind and Search
-	result, err = BindAndSearch(l)
+	result, err = BindAndSearch(ltls)
 	if err != nil {
 		log.Fatal(err)
 	}
