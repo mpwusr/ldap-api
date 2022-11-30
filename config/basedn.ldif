@@ -1,0 +1,7 @@
+dn: ou=people,dc=ldap-domain,dc=com
+objectClass: organizationalUnit
+ou: people
+
+dn: ou=groups,dc=ldap-domain,dc=com
+objectClass: organizationalUnit
+ou: groups

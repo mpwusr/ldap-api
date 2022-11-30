@@ -1,0 +1,5 @@
+dn: cn=ldapteam,ou=groups,dc=ldap-domain,dc=com
+objectClass: posixGroup
+cn: ldapteam
+gidNumber: 2000
+memberUid: ldapteam

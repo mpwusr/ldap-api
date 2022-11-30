@@ -1,0 +1,35 @@
+dn: uid=mike,ou=people,dc=ldap-domain,dc=com
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: mike
+sn: mpw
+userPassword: {SSHA}iYxYuT4M4zaGfJdsh3K7WSZcqMnHd91B
+loginShell: /bin/bash
+uidNumber: 2000
+gidNumber: 2000
+homeDirectory: /home/mike
+
+dn: uid=tommy,ou=people,dc=ldap-domain,dc=com
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: tommy
+sn: tiw
+userPassword: {SSHA}iYxYuT4M4zaGfJdsh3K7WSZcqMnHd91B
+loginShell: /bin/bash
+uidNumber: 2001
+gidNumber: 2000
+homeDirectory: /home/tommy
+
+dn: uid=sue,ou=people,dc=ldap-domain,dc=com
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: sue
+sn: saw
+userPassword: {SSHA}iYxYuT4M4zaGfJdsh3K7WSZcqMnHd91B
+loginShell: /bin/bash
+uidNumber: 2003
+gidNumber: 2000
+homeDirectory: /home/sue

@@ -1,0 +1,6 @@
+dn: dc=ldap-domain,dc=com
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: ldap-domain.com
+dc: ldap-domain
